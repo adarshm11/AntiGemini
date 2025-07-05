@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "AntiGemini",
+  "version": "1.0",
+  "description": "Disables Google AI overview on Google searches",
+  "permissions": ["scripting", "activeTab"],
+  "host_permissions": ["https://www.google.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.google.com/search*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
