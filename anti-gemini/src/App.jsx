@@ -4,6 +4,10 @@ import DOMAINS from './domains';
 function App() {
   const [on, setOn] = useState(true);
 
+  const toggleOn = () => {
+    setOn(!on);
+  }
+
   useEffect(() => {
     if (!on) return;
     const url = window.location.href;
@@ -22,16 +26,13 @@ function App() {
 
     const newUrl = `${window.location.pathname}?${params.toString()}`;
     window.location.replace(newUrl);
-  }, []);
+  }, [on]);
 
   return (
     <div>
       <h1>AntiGemini</h1>
       <h3>Google AI Overview Disabler</h3>
-      <label className="switch">
-        <input type="checkbox"/>
-        <span className="slider round"></span>
-      </label>
+      <button onClick={() => toggleOn()}>{on ? "Turn Off" : "Turn On"}</button>
     </div>
   );
 }

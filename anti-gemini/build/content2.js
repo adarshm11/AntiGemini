@@ -1,0 +1,1 @@
+import{c as o,j as e,A as n}from"./assets/App-BpwOGWgN.js";const t=document.createElement("div");t.id="react-extension-root";document.body.appendChild(t);const r=o.createRoot(t);r.render(e.jsx(n,{}));
